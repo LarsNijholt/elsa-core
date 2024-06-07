@@ -16,7 +16,7 @@ public class BackgroundWorkflowCancellationDispatcher(ICommandSender commandSend
     public async Task<DispatchCancelWorkflowsResponse> DispatchAsync(DispatchCancelWorkflowsRequest request, CancellationToken cancellationToken = default)
     {
         var command = new CancelWorkflowsCommand(request);
-        await commandSender.SendAsync(command, CommandStrategy.Background, cancellationToken);
+        await commandSender.SendAsync(command, CommandStrategy.Default, cancellationToken);
         return new DispatchCancelWorkflowsResponse();
     }
 }
