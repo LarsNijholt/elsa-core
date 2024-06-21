@@ -21,6 +21,7 @@ public class ActivityDescriber : IActivityDescriber
     private readonly IPropertyDefaultValueResolver _defaultValueResolver;
     private readonly IActivityFactory _activityFactory;
     private readonly IPropertyUIHandlerResolver _propertyUIHandlerResolver;
+    
     /// <summary>
     /// Constructor.
     /// </summary>

@@ -61,7 +61,7 @@ public class WorkflowRuntimeFeature : FeatureBase
     /// <summary>
     /// A factory that instantiates an <see cref="IWorkflowCancellationDispatcher"/>.
     /// </summary>
-    public Func<IServiceProvider, IWorkflowCancellationDispatcher> WorkflowCancellationDispatcher { get; set; } = sp => ActivatorUtilities.CreateInstance<BackgroundWorkflowCancellationDispatcher>(sp);
+    public Func<IServiceProvider, IWorkflowCancellationDispatcher> WorkflowCancellationDispatcher { get; set; } = sp => ActivatorUtilities.CreateInstance<DefaultWorkflowCancellationDispatcher>(sp);
 
     /// <summary>
     /// A factory that instantiates an <see cref="IBookmarkStore"/>.
