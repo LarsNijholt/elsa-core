@@ -43,6 +43,7 @@ public class WorkflowInstanceFactory(IIdentityGenerator identityGenerator, ISyst
             WorkflowState = workflowState,
             DefinitionId = workflowState.DefinitionId,
             DefinitionVersionId = workflowState.DefinitionVersionId,
+            Name = workflow.WorkflowMetadata.Name,
             Version = workflowState.DefinitionVersion,
             CorrelationId = workflowState.CorrelationId,
             Status = workflowState.Status,

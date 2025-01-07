@@ -172,7 +172,9 @@ public class WorkflowRunner(
         var cancellationToken = workflowExecutionContext.CancellationToken;
 
         await notificationSender.SendAsync(new WorkflowExecuting(workflow, workflowExecutionContext), cancellationToken);
-
+        
+        workflowExecutionContext.SetProperty(SetName.WorkflowInstanceNameKey, workflow.WorkflowMetadata.Name);
+        
         // If the status is Pending, it means the workflow is started for the first time.
         if (workflowExecutionContext.SubStatus == WorkflowSubStatus.Pending)
         {
